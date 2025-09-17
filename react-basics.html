@@ -11,8 +11,30 @@
 
 <script src="https://unpkg.com/supersimpledev/babel.js"></script>
 <script type="text/babel">
-    const button = <button>
-    ReactDOM.createRoot(container).render('Welcome to SuperSimpleDev React Course');
+    const container = document.querySelector('.js-container')
+    const button = <button>Good job!</button>
+    const para = <p>My name is Ayush</p>
+    const item = (
+      <div>
+          <p>Cotton socks</p>
+          <p>Price: $10</p>
+          <button>Add to Cart </button>
+      </div>
+    );
+    const productCost = 26;
+    console.log(productCost)
+    const product = <p>Product cost: ${productCost}</p>
+
+    const shippingCost = 5;
+    const payment = (
+        <div>
+            <p>Product cost: ${productCost}</p>
+            <p>Shipping cost: ${shippingCost}</p>
+            <p>Total cost: ${shippingCost + productCost}</p>
+            <button>Place your order</button>
+        </div>
+    );
+    ReactDOM.createRoot(container).render(payment);
 </script>
 </body>
 </html>
