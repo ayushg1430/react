@@ -6,6 +6,8 @@
 <body>
 <div class="js-container"></div>
 
+<script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
 <script src="https://unpkg.com/supersimpledev/react.js"></script>
 <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
 
@@ -34,7 +36,19 @@
             <button>Place your order</button>
         </div>
     );
-    ReactDOM.createRoot(container).render(payment);
+    const date_ = dayjs().format('MMMM D');
+    console.log(date_);
+    const currDate = <p>Today is {date_}</p>
+
+    const time_ = dayjs().format('HH:mm:ss');
+    console.log(time_);
+    const currTime = <p>Current time: {time_}</p>
+    const root = ReactDOM.createRoot(container);
+    setInterval(()=>{
+        const para = <p>Current time: {dayjs().format('HH:mm:ss')}</p>
+        root.render(para);
+    }, 1000);
+
 </script>
 </body>
 </html>
